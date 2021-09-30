@@ -157,13 +157,13 @@ class Music(commands.Cog, wavelink.WavelinkMixin):
         elif isinstance(exc, NoVoiceChannel):
             await("Voice channel not found.")
 
-    @commands.command(name="disconnect", aliases=["leave"])
+    @commands.command(name="disconnect", aliases=["leave", "fuckoff"])
     async def disconnect_command(self, ctx):
         player = self.get_player(ctx)
         await player.teardown()
         await ctx.send("Disconnected.")
 
-    @commands.command(name="play")
+    @commands.command(name="play", aliases=["p", "pp"])
     async def play_command(self, ctx, *, query: t.Optional[str]):
         player = self.get_player(ctx)
 
